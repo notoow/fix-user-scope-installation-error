@@ -48,26 +48,26 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Fix 'This User Installer is not meant to be run as an Administrator'",
-    description: "Instantly fix User Installer admin errors in VS Code, Cursor, Antigravity. One-click solution - no registry edits needed.",
+    title: "Fix 'User Installer is not meant to be run as Administrator'",
+    description: "One-click solution. No registry edits. Works with VS Code, Cursor, Antigravity.",
     url: siteUrl,
     siteName: "RunAsUser",
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: `${siteUrl}/images/error-screenshot.png`,
-        width: 738,
-        height: 217,
-        alt: "This User Installer is not meant to be run as an Administrator error message",
+        url: `${siteUrl}/images/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Fix User Installer is not meant to be run as Administrator - One-click solution",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fix 'User Installer is not meant to be run as Administrator'",
-    description: "Getting this Windows error? Fix it in 3 seconds. Works with VS Code, Cursor, Antigravity.",
-    images: [`${siteUrl}/images/error-screenshot.png`],
+    description: "One-click solution. No registry edits. Works with VS Code, Cursor, Antigravity.",
+    images: [`${siteUrl}/images/og-image.png`],
   },
 };
 
