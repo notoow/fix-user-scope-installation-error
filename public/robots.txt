@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://notoow.github.io/fix-user-scope-installation-error/sitemap.xml
