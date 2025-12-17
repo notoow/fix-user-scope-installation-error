@@ -337,7 +337,7 @@ pause
             <span className="text-[#2ea043]">&gt;</span> FAQ
           </h2>
           <div className="space-y-4">
-            <details className="bg-[#161b22] border border-[#30363d] rounded-lg" open>
+            <details className="bg-[#161b22] border border-[#30363d] rounded-lg">
               <summary className="p-4 cursor-pointer hover:bg-[#1c2128] transition-colors">
                 What error does this fix?
               </summary>
