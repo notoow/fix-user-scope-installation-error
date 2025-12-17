@@ -205,28 +205,40 @@ pause
             <span className="text-[#2ea043]">&gt;</span> How to Use
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-6">
+            <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-4">
               <div className="text-[#2ea043] text-3xl font-bold mb-2">01</div>
-              <h3 className="font-semibold mb-2">Download .bat</h3>
-              <p className="text-[#8b949e] text-sm">
-                Click the green button above to download RunAsUser_Fix.bat
+              <h3 className="font-semibold mb-2">Place files together</h3>
+              <p className="text-[#8b949e] text-sm mb-3">
+                Put the .bat file in the same folder as your installer
               </p>
+              <div className="rounded overflow-hidden border border-[#30363d]">
+                <img src="/fix-user-scope-installation-error/images/1.png" alt="Step 1: Files in folder" className="w-full" />
+              </div>
             </div>
-            <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-6">
+            <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-4">
               <div className="text-[#2ea043] text-3xl font-bold mb-2">02</div>
-              <h3 className="font-semibold mb-2">Drag &amp; Drop</h3>
-              <p className="text-[#8b949e] text-sm">
-                Drag your installer (.exe) onto the .bat file
+              <h3 className="font-semibold mb-2">Drag installer onto .bat</h3>
+              <p className="text-[#8b949e] text-sm mb-3">
+                Drag the .exe file onto the RunAsUser_Fix.bat icon
               </p>
+              <div className="rounded overflow-hidden border border-[#30363d]">
+                <img src="/fix-user-scope-installation-error/images/2.png" alt="Step 2: Dragging file" className="w-full" />
+              </div>
             </div>
-            <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-6">
+            <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-4">
               <div className="text-[#2ea043] text-3xl font-bold mb-2">03</div>
-              <h3 className="font-semibold mb-2">Done!</h3>
-              <p className="text-[#8b949e] text-sm">
-                Installer runs without admin conflicts
+              <h3 className="font-semibold mb-2">Drop &amp; Done!</h3>
+              <p className="text-[#8b949e] text-sm mb-3">
+                Release to run installer without admin conflicts
               </p>
+              <div className="rounded overflow-hidden border border-[#30363d]">
+                <img src="/fix-user-scope-installation-error/images/3.png" alt="Step 3: Drop to run" className="w-full" />
+              </div>
             </div>
           </div>
+          <p className="text-[#8b949e] text-sm text-center mt-4">
+            Note: Do NOT double-click the .bat file first. Drag the .exe directly onto the .bat icon in File Explorer.
+          </p>
         </section>
 
         {/* Advanced Option */}
