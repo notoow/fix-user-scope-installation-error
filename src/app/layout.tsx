@@ -14,20 +14,24 @@ export const metadata: Metadata = {
   title: "Fix User Scope Installation Error | RunAsUser - Windows Admin Fix",
   description: "Instantly fix 'Updates are disabled because you are running as Administrator' and 'This User Installer is not meant to be run as Administrator' errors. Works with VS Code, Cursor, Antigravity. One-click solution.",
   keywords: [
-    "User scope installation error fix",
-    "Updates are disabled administrator",
     "This User Installer is not meant to be run as an Administrator",
+    "User Installer is not meant to be run as Administrator",
+    "Updates are disabled because you are running as Administrator",
+    "User scope installation error fix",
+    "download the System Installer instead",
     "Run as invoker windows 10",
     "Run as invoker windows 11",
     "VS Code user setup admin error",
     "VS Code updates disabled administrator",
     "Cursor IDE admin error",
     "Antigravity update fail",
+    "Antigravity installer admin error",
     "runas trustlevel 0x20000",
     "Windows UAC fix",
     "De-elevate admin privileges",
     "user installer admin error",
-    "electron app admin error"
+    "electron app admin error",
+    "install for all users error"
   ],
   authors: [{ name: "RunAsUser" }],
   creator: "RunAsUser",
@@ -44,17 +48,26 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Fix User Scope Installation Error | RunAsUser",
-    description: "Fix 'Updates are disabled because you are running as Administrator' error in 3 seconds. Works with VS Code, Cursor, Antigravity, and more.",
+    title: "Fix 'This User Installer is not meant to be run as an Administrator'",
+    description: "Instantly fix User Installer admin errors in VS Code, Cursor, Antigravity. One-click solution - no registry edits needed.",
     url: siteUrl,
     siteName: "RunAsUser",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: `${siteUrl}/images/error-screenshot.png`,
+        width: 738,
+        height: 217,
+        alt: "This User Installer is not meant to be run as an Administrator error message",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fix User Scope Installation Error | RunAsUser",
-    description: "Fix Windows admin privilege conflicts in 3 seconds. One-click solution for VS Code, Cursor, Antigravity.",
+    title: "Fix 'User Installer is not meant to be run as Administrator'",
+    description: "Getting this Windows error? Fix it in 3 seconds. Works with VS Code, Cursor, Antigravity.",
+    images: [`${siteUrl}/images/error-screenshot.png`],
   },
 };
 

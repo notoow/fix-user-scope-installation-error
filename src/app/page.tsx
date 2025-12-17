@@ -109,38 +109,32 @@ pause
       <main className="max-w-4xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <section className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-[#f85149]">Error:</span>{" "}
-            <span className="text-[#c9d1d9]">&quot;Updates are disabled...&quot;</span>
-          </h1>
-          <p className="text-xl text-[#2ea043] glow-green mb-6">
-            Fix it in 3 seconds.
-          </p>
+          <p className="text-[#8b949e] text-sm mb-2">Getting this error?</p>
 
-          {/* Error Message Preview */}
-          <div className="terminal max-w-2xl mx-auto mb-8">
-            <div className="terminal-header">
-              <div className="terminal-dot bg-[#f85149]"></div>
-              <div className="terminal-dot bg-[#d29922]"></div>
-              <div className="terminal-dot bg-[#2ea043]"></div>
-              <span className="text-[#8b949e] text-sm ml-2">Error Message</span>
-            </div>
-            <div className="terminal-body text-left text-sm">
-              <p className="text-[#f85149] mb-2">
-                ! Updates are disabled because you are running as Administrator.
-              </p>
-              <p className="text-[#8b949e]">-- or --</p>
-              <p className="text-[#f85149] mt-2">
-                ! This User Installer is not meant to be run as an Administrator.
-              </p>
-            </div>
+          {/* Actual Error Screenshot */}
+          <div className="max-w-xl mx-auto mb-6 rounded-lg overflow-hidden border border-[#30363d] shadow-lg">
+            <img
+              src="/fix-user-scope-installation-error/images/error-screenshot.png"
+              alt="This User Installer is not meant to be run as an Administrator. If you would like to install Antigravity for all users in this system, download the System Installer instead."
+              className="w-full"
+            />
           </div>
 
-          <p className="text-[#8b949e] max-w-2xl mx-auto">
-            Getting this error with <span className="text-[#c9d1d9]">VS Code</span>,{" "}
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">
+            Fix &quot;<span className="text-[#f85149]">User Installer is not meant to be run as Administrator</span>&quot;
+          </h1>
+          <p className="text-xl text-[#2ea043] glow-green mb-6">
+            One-click solution. No registry edits.
+          </p>
+
+          <p className="text-[#8b949e] max-w-2xl mx-auto mb-4">
+            This error appears in <span className="text-[#c9d1d9]">VS Code</span>,{" "}
             <span className="text-[#c9d1d9]">Cursor</span>,{" "}
-            <span className="text-[#c9d1d9]">Antigravity</span>, or similar apps?
-            Generate a fix command instantly.
+            <span className="text-[#c9d1d9]">Antigravity</span>, and other Electron apps
+            when running as Administrator.
+          </p>
+          <p className="text-[#8b949e] text-sm max-w-2xl mx-auto">
+            Also fixes: <span className="text-[#c9d1d9]">&quot;Updates are disabled because you are running as Administrator&quot;</span>
           </p>
         </section>
 
