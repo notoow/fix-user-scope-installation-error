@@ -31,13 +31,28 @@ export default function Home() {
   };
 
   const downloadBatchFile = () => {
-    const batchContent = `@echo off
+    const targetFile = fileName.trim();
+
+    const batchContent = targetFile
+      ? `@echo off
+title RunAsUser - Fix for ${targetFile}
+echo ============================================
+echo   RunAsUser - De-elevate Admin Privileges
+echo ============================================
+echo.
+echo [INFO] Running: ${targetFile}
+echo.
+runas /trustlevel:0x20000 "${targetFile}"
+echo.
+echo [DONE] If you see the installer, it worked!
+pause
+`
+      : `@echo off
 title RunAsUser - Force User Scope
 echo ============================================
 echo   RunAsUser - De-elevate Admin Privileges
 echo ============================================
 echo.
-echo [INFO] This will run your installer as a regular user.
 echo [INFO] Drag and drop your installer onto this .bat file,
 echo        or enter the filename below.
 echo.
@@ -63,7 +78,7 @@ pause
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "RunAsUser_Fix.bat";
+    a.download = targetFile ? `RunAsUser_${targetFile.replace(/\.[^/.]+$/, "")}.bat` : "RunAsUser_Fix.bat";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
