@@ -5,7 +5,8 @@ import { useState } from "react";
 export default function Home() {
   const [fileName, setFileName] = useState("");
   const [copied, setCopied] = useState(false);
-  const [showDiagnosis, setShowDiagnosis] = useState(false);
+  const [showAdvanced, setShowAdvanced] = useState(false);
+  const [showTroubleshoot, setShowTroubleshoot] = useState(false);
 
   const command = fileName.trim()
     ? `runas /trustlevel:0x20000 "${fileName.trim()}"`
@@ -143,74 +144,57 @@ pause
           </p>
         </section>
 
-        {/* Fix Generator Section */}
+        {/* Quick Fix - Main Solution */}
         <section className="mb-12">
           <div className="terminal max-w-2xl mx-auto">
             <div className="terminal-header">
               <div className="terminal-dot bg-[#f85149]"></div>
               <div className="terminal-dot bg-[#d29922]"></div>
               <div className="terminal-dot bg-[#2ea043]"></div>
-              <span className="text-[#8b949e] text-sm ml-2">Fix Generator</span>
+              <span className="text-[#8b949e] text-sm ml-2">Quick Fix (Recommended)</span>
             </div>
             <div className="terminal-body">
-              {/* Input */}
-              <div className="mb-4">
-                <label className="block text-[#8b949e] text-sm mb-2">
-                  <span className="text-[#2ea043]">$</span> Enter your installer filename:
-                </label>
-                <input
-                  type="text"
-                  value={fileName}
-                  onChange={(e) => setFileName(e.target.value)}
-                  placeholder="e.g., VSCodeUserSetup-x64-1.85.0.exe"
-                  className="w-full bg-[#0d1117] border border-[#30363d] rounded px-4 py-3 text-[#c9d1d9] placeholder-[#484f58] focus:outline-none focus:border-[#2ea043] font-mono"
-                />
-              </div>
-
-              {/* Generated Command */}
-              <div className="mb-4">
-                <label className="block text-[#8b949e] text-sm mb-2">
-                  <span className="text-[#2ea043]">$</span> Generated command:
-                </label>
-                <div className="bg-[#0d1117] border border-[#30363d] rounded p-4 relative">
-                  <code className="text-[#2ea043] break-all">{command}</code>
-                  <button
-                    onClick={copyToClipboard}
-                    disabled={!fileName.trim()}
-                    className={`absolute top-2 right-2 px-3 py-1 rounded text-sm transition-all ${
-                      fileName.trim()
-                        ? "bg-[#238636] hover:bg-[#2ea043] text-white cursor-pointer"
-                        : "bg-[#30363d] text-[#484f58] cursor-not-allowed"
-                    }`}
-                  >
-                    {copied ? "Copied!" : "Copy"}
-                  </button>
-                </div>
-              </div>
-
-              {/* Download Button */}
-              <button
-                onClick={downloadBatchFile}
-                className="w-full bg-[#238636] hover:bg-[#2ea043] text-white py-3 rounded font-semibold transition-colors flex items-center justify-center gap-2"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="text-center py-4">
+                <p className="text-[#c9d1d9] mb-4">
+                  <span className="text-[#2ea043] font-bold">Step 1:</span> Download the universal fix tool
+                </p>
+                <button
+                  onClick={downloadBatchFile}
+                  className="bg-[#238636] hover:bg-[#2ea043] text-white py-4 px-8 rounded-lg font-semibold transition-colors inline-flex items-center gap-3 text-lg"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                  />
-                </svg>
-                Download RunAsUser_Fix.bat
-              </button>
-              <p className="text-[#8b949e] text-xs mt-2 text-center">
-                Drag &amp; drop your installer onto the .bat file, or run it and enter the filename.
-              </p>
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
+                  </svg>
+                  Download RunAsUser_Fix.bat
+                </button>
+                <p className="text-[#c9d1d9] mt-6 mb-2">
+                  <span className="text-[#2ea043] font-bold">Step 2:</span> Drag &amp; drop your installer onto the .bat file
+                </p>
+                <div className="bg-[#0d1117] border border-[#30363d] rounded-lg p-4 mt-4 inline-block">
+                  <div className="flex items-center gap-4 text-sm">
+                    <div className="bg-[#30363d] rounded px-3 py-2">
+                      <span className="text-[#8b949e]">setup.exe</span>
+                    </div>
+                    <span className="text-[#2ea043]">→ drag onto →</span>
+                    <div className="bg-[#238636] rounded px-3 py-2">
+                      <span className="text-white">RunAsUser_Fix.bat</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-[#8b949e] text-sm mt-4">
+                  Works with any installer from any folder!
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -223,40 +207,99 @@ pause
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-6">
               <div className="text-[#2ea043] text-3xl font-bold mb-2">01</div>
-              <h3 className="font-semibold mb-2">Enter Filename</h3>
+              <h3 className="font-semibold mb-2">Download .bat</h3>
               <p className="text-[#8b949e] text-sm">
-                Type your installer filename (e.g., &quot;Antigravity.exe&quot;)
+                Click the green button above to download RunAsUser_Fix.bat
               </p>
             </div>
             <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-6">
               <div className="text-[#2ea043] text-3xl font-bold mb-2">02</div>
-              <h3 className="font-semibold mb-2">Copy or Download</h3>
+              <h3 className="font-semibold mb-2">Drag &amp; Drop</h3>
               <p className="text-[#8b949e] text-sm">
-                Copy the command or download the .bat file
+                Drag your installer (.exe) onto the .bat file
               </p>
             </div>
             <div className="bg-[#161b22] border border-[#30363d] rounded-lg p-6">
               <div className="text-[#2ea043] text-3xl font-bold mb-2">03</div>
-              <h3 className="font-semibold mb-2">Run &amp; Fixed!</h3>
+              <h3 className="font-semibold mb-2">Done!</h3>
               <p className="text-[#8b949e] text-sm">
-                Execute in CMD or run the .bat file. Done!
+                Installer runs without admin conflicts
               </p>
             </div>
           </div>
         </section>
 
+        {/* Advanced Option */}
+        <section className="mb-12">
+          <button
+            onClick={() => setShowAdvanced(!showAdvanced)}
+            className="w-full text-left bg-[#161b22] border border-[#30363d] rounded-lg p-4 flex items-center justify-between hover:border-[#2ea043] transition-colors max-w-2xl mx-auto"
+          >
+            <span className="font-semibold">
+              <span className="text-[#2ea043]">&gt;</span> Advanced: Generate Custom Command
+            </span>
+            <span className="text-[#2ea043]">{showAdvanced ? "[-]" : "[+]"}</span>
+          </button>
+          {showAdvanced && (
+            <div className="terminal max-w-2xl mx-auto mt-4">
+              <div className="terminal-header">
+                <div className="terminal-dot bg-[#f85149]"></div>
+                <div className="terminal-dot bg-[#d29922]"></div>
+                <div className="terminal-dot bg-[#2ea043]"></div>
+                <span className="text-[#8b949e] text-sm ml-2">Command Generator</span>
+              </div>
+              <div className="terminal-body">
+                <div className="mb-4">
+                  <label className="block text-[#8b949e] text-sm mb-2">
+                    <span className="text-[#2ea043]">$</span> Enter installer filename:
+                  </label>
+                  <input
+                    type="text"
+                    value={fileName}
+                    onChange={(e) => setFileName(e.target.value)}
+                    placeholder="e.g., VSCodeUserSetup-x64-1.85.0.exe"
+                    className="w-full bg-[#0d1117] border border-[#30363d] rounded px-4 py-3 text-[#c9d1d9] placeholder-[#484f58] focus:outline-none focus:border-[#2ea043] font-mono"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-[#8b949e] text-sm mb-2">
+                    <span className="text-[#2ea043]">$</span> Copy this command to CMD:
+                  </label>
+                  <div className="bg-[#0d1117] border border-[#30363d] rounded p-4 relative">
+                    <code className="text-[#2ea043] break-all">{command}</code>
+                    <button
+                      onClick={copyToClipboard}
+                      disabled={!fileName.trim()}
+                      className={`absolute top-2 right-2 px-3 py-1 rounded text-sm transition-all ${
+                        fileName.trim()
+                          ? "bg-[#238636] hover:bg-[#2ea043] text-white cursor-pointer"
+                          : "bg-[#30363d] text-[#484f58] cursor-not-allowed"
+                      }`}
+                    >
+                      {copied ? "Copied!" : "Copy"}
+                    </button>
+                  </div>
+                </div>
+                <p className="text-[#8b949e] text-xs">
+                  Run this command in CMD from the same folder as your installer.
+                </p>
+              </div>
+            </div>
+          )}
+        </section>
+
         {/* Self Diagnosis */}
         <section className="mb-12">
           <button
-            onClick={() => setShowDiagnosis(!showDiagnosis)}
+            onClick={() => setShowTroubleshoot(!showTroubleshoot)}
             className="w-full text-left bg-[#161b22] border border-[#30363d] rounded-lg p-4 flex items-center justify-between hover:border-[#2ea043] transition-colors"
           >
             <span className="font-semibold">
-              <span className="text-[#2ea043]">&gt;</span> Self Diagnosis Checklist
+              <span className="text-[#2ea043]">&gt;</span> Troubleshooting Checklist
             </span>
-            <span className="text-[#2ea043]">{showDiagnosis ? "[-]" : "[+]"}</span>
+            <span className="text-[#2ea043]">{showTroubleshoot ? "[-]" : "[+]"}</span>
           </button>
-          {showDiagnosis && (
+          {showTroubleshoot && (
             <div className="bg-[#161b22] border border-t-0 border-[#30363d] rounded-b-lg p-6 -mt-1">
               <p className="text-[#8b949e] mb-4">
                 Before using the fix, check these common causes:
