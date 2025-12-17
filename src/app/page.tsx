@@ -109,17 +109,6 @@ pause
       <main className="max-w-4xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <section className="text-center mb-12">
-          <p className="text-[#8b949e] text-sm mb-2">Getting this error?</p>
-
-          {/* Actual Error Screenshot */}
-          <div className="max-w-xl mx-auto mb-6 rounded-lg overflow-hidden border border-[#30363d] shadow-lg">
-            <img
-              src="/fix-user-scope-installation-error/images/error-screenshot.png"
-              alt="This User Installer is not meant to be run as an Administrator. If you would like to install Antigravity for all users in this system, download the System Installer instead."
-              className="w-full"
-            />
-          </div>
-
           <h1 className="text-2xl md:text-3xl font-bold mb-4">
             Fix &quot;<span className="text-[#f85149]">User Installer is not meant to be run as Administrator</span>&quot;
           </h1>
@@ -127,14 +116,13 @@ pause
             One-click solution. No registry edits.
           </p>
 
-          <p className="text-[#8b949e] max-w-2xl mx-auto mb-4">
-            This error appears in <span className="text-[#c9d1d9]">VS Code</span>,{" "}
+          <p className="text-[#8b949e] max-w-2xl mx-auto mb-2">
+            Works with <span className="text-[#c9d1d9]">VS Code</span>,{" "}
             <span className="text-[#c9d1d9]">Cursor</span>,{" "}
-            <span className="text-[#c9d1d9]">Antigravity</span>, and other Electron apps
-            when running as Administrator.
+            <span className="text-[#c9d1d9]">Antigravity</span>, and other Electron apps.
           </p>
           <p className="text-[#8b949e] text-sm max-w-2xl mx-auto">
-            Also fixes: <span className="text-[#c9d1d9]">&quot;Updates are disabled because you are running as Administrator&quot;</span>
+            Also fixes: &quot;Updates are disabled because you are running as Administrator&quot;
           </p>
         </section>
 
@@ -349,6 +337,24 @@ pause
             <span className="text-[#2ea043]">&gt;</span> FAQ
           </h2>
           <div className="space-y-4">
+            <details className="bg-[#161b22] border border-[#30363d] rounded-lg" open>
+              <summary className="p-4 cursor-pointer hover:bg-[#1c2128] transition-colors">
+                What error does this fix?
+              </summary>
+              <div className="px-4 pb-4">
+                <div className="rounded-lg overflow-hidden border border-[#30363d] mb-3">
+                  <img
+                    src="/fix-user-scope-installation-error/images/error-screenshot.png"
+                    alt="This User Installer is not meant to be run as an Administrator error message"
+                    className="w-full"
+                  />
+                </div>
+                <p className="text-[#8b949e] text-sm">
+                  This tool fixes the &quot;<span className="text-[#f85149]">This User Installer is not meant to be run as an Administrator</span>&quot; error
+                  that appears when running user-scope installers with elevated privileges.
+                </p>
+              </div>
+            </details>
             <details className="bg-[#161b22] border border-[#30363d] rounded-lg">
               <summary className="p-4 cursor-pointer hover:bg-[#1c2128] transition-colors">
                 What does <code className="text-[#2ea043]">runas /trustlevel:0x20000</code> do?
